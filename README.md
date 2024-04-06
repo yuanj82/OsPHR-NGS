@@ -1,6 +1,6 @@
 ## 文章信息
 
-文章题为"A phosphate starvation response-regulated receptor-like kinase, OsADK1, is required for mycorrhizal symbiosis and phosphate starvation responses"。该文章发表于 New Phytologist（中科院一区，IF=9.3，第一作者：Jincai Shi，通讯作者：Ertao Wang）。
+文章题为"A phosphate starvation response-regulated receptor-like kinase, OsADK1, is required for mycorrhizal symbiosis and phosphate starvation responses"。该文章发表于 New Phytologist（中科院一区，IF=9.3，第一作者：Jincai Shi，通讯作者：Ertao Wang。
 
 此处对该文章的 RNA-seq 与 DAP-seq 数据分析部分进行复现，所得出的数据文件均在此仓库。
 

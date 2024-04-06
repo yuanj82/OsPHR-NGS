@@ -4,7 +4,9 @@ The title of the article is "A phosphate starvation response-regulated receptor-
 
 Here, we reproduce the RNA-seq and DAP-seq data analysis sections of this article, and the resulting data files are in this repository.
 
-Attention: There is a significant difference between the reproduced results and the original results.
+! ! ! Note: The number of differential genes in the reproduced RNA-seq analysis and the consistency of sample peaks in the DAP-seq experiment are different from the original results.
+
+> After communicating with the author of the original article, it was discovered that this difference may be caused by differences in analysis methods and filtering parameter settings (including differences in analysis software used). The original article may have had more stringent screening criteria applied. It is a common phenomenon that different analysis methods and screening criteria lead to differences in the number of genes. Nonetheless, the reproduced results still support the discussion in the original article.
 
 ## RNA-seq
 
