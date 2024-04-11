@@ -9,6 +9,19 @@ You can read the English version [here](./README.en.md).
 ！！！注意：复现的 RNA-seq 分析中差异基因的数量以及 DAP-seq 实验中样品 peaks 的一致性与原文结果不同。
 
 > 在与原文作者沟通后，发现这种差异可能是由于分析方法和过滤参数设置的不同（包括所使用的分析软件不同）造成的。原文可能应用了更为严格的筛选标准。不同的分析方法和筛选标准导致基因数量的差异是常见的现象。尽管如此，复现的结果仍然支持原文中的讨论。
+> 
+> 下面是原文作者提供的部分参数
+> **转录组分析参数**
+> 
+> - clean trimmomatic-0.32 末端 4 碱基平均质量大于 20
+> - mapping bowtie2 2.2.1，参考序列为 uniq-cds，参数默认，单端 mapping；统计 reads 数 samtools 0.1.19，参数默认
+> - 差异基因使用 R 包 DEGseq，差异基因的标准是 | log2（fold change）| > 1，rpkm > 20，p < 0.001，q < 0.001
+> **DAP-seq 分析参数**
+>
+> - 使用 fastp（version 0.20.1，默认参数）软件对目标蛋白（TF）样本和阴性对照（Halo）样本的原始数据进行质控，包括去除接头、重复序列和低质量序列，得到 clean data
+> - 之后利用 bowtie2（version 2.4.2，--end-to-end --sensitive）将 Clean Reads 与指定的参考基因组进行序列比对，得到 bam 格式的比对文件
+> - 将唯一比对上的结果去重后，使用 MACS2（version 2.2.7.1，-f BAMPE --keep-dup auto -q 0.05）进行 Peak Calling，获得的 bigwig 格式文件可使用 IGV 软件进行可视化展示
+> - 使用 R 包 ChIPseeker 对 peak 进行注释，使用 HOMER（v4.11.1）进行 motif 分析
 
 ## RNA-seq
 
